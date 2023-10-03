@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashionista</title>
+    <link rel="icon" href="images/download (3).png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+ <!-- bootstrap -->
+
+ <link
+ href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+ rel="stylesheet"
+ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+ crossorigin="anonymous"
+/>
+</head>
+<body>
+<section id="header">
+    <h2 class="logo">Fashi<span>onista</span></h2>
+
+        <div>
+            <ul id="navbar">
+                <li><a  href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="repair.html">Repair</a></li>
+                <li><a href="cart.html">Shopping Cart</a></li>
+                <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+                
+            </ul>
+        </div>
+        <div id="mobile">
+        <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+</section>
+<div id="alert" style="text-align:center;display:none;color: #3c763d;background-color: #dff0d8; border-color: #d6e9c6;padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; position: relative ; width: 100%; margin: 0 auto; margin-bottom: 20px; padding: 15px; border: 1px solid transparent; border-radius: 4px; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #dff0d8; border-color: #d6e9c6; color: #3c763d; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #dff0d8; border-color: #d6e9c6; color: #3c763d; padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; position: relative ; width: 100%; margin: 0 auto; margin-bottom: 20px; padding: 15px; border: 1px solid transparent; border-radius: 4px; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #dff0d8; border-color: #d6e9c6; color: #3c763d; position: fixed; z-index: 2;" class="alert alert-success alert-dismissible fade show " role="alert">
+  <a id="trigger" href="#" style=" text-decoration: none; float: right; font-size: 21px; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20); opacity: .2;" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Success!</strong> Item added to cart.
+</div>
+<div id ="alert2" style="text-align:center;display:none;color: #8a6d3b;background-color: #fcf8e3; border-color: #faebcc;padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; position: relative ; width: 100%; margin: 0 auto; margin-bottom: 20px; padding: 15px; border: 1px solid transparent; border-radius: 4px; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #fcf8e3; border-color: #faebcc; color: #8a6d3b; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #fcf8e3; border-color: #faebcc; color: #8a6d3b; padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; position: relative ; width: 100%; margin: 0 auto; margin-bottom: 20px; padding: 15px; border: 1px solid transparent; border-radius: 4px; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #fcf8e3; border-color: #faebcc; color: #8a6d3b; position: fixed; z-index: 2;" class="alert alert-warning alert-dismissible fade show" role="alert">
+  <a id="trigger" href="#" style=" text-decoration: none; float: right; font-size: 21px; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20); opacity: .2;" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Warning!</strong> Item already in cart.
+</div>
+
+    <section id="page-header">
+        
+        <h2>Categories you might like</h2>
+    
+        <p>Save More With Coupons & Up To 70% Off!</p>
+        
+    </section>
+     <!-- start filteration section  -->
+<!-- 
+     <section class="py-4">
+        <div class="container">
+          <div class="row  align-content-center justify-content-between">
+            <div class="col-md-5  ">
+              <h5 class="my-4">
+                Choose your color
+              </h5>
+              <div class="d-flex justify-content-between">
+                <button class="btn btn-dark rounded-circle" data-color="black"> All</button>
+                <button class="btn btn-danger rounded-circle " data-color="red">Red</button>
+                <button class="btn btn-success rounded-circle" data-color="green">Green</button>
+                <button class="btn btn-primary rounded-circle" data-color="blue">Blue</button>
+                <button class="btn btn-warning rounded-circle" data-color="yellow">Yellow</button>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <h5 class="my-4 text-center">
+                Choose your size
+              </h5>
+
+              <div class="d-flex justify-content-around">
+                <div class="form-check">
+                  <input
+                    data-size="ALL"
+                    class="form-check-input"
+                    type="radio"
+                    value="All"
+                    id="All_input"
+                    name="size_filter"
+                  />
+                  <label class="form-check-label" for="small_input">
+                    All
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    data-size="small"
+                    class="form-check-input"
+                    type="radio"
+                    value="small"
+                    id="small_input"
+                    name="size_filter"
+                  />
+                  <label class="form-check-label" for="small_input">
+                    small
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    data-size="medium"
+                    class="form-check-input"
+                    type="radio"
+                    value="medium"
+                    id="medium_input"
+                    name="size_filter"
+  
+                  />
+                  <label class="form-check-label" for="medium_input">
+                    medium
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    data-size="large"
+                    class="form-check-input"
+                    type="radio"
+                    value="large"
+                    id="large_input"
+                    name="size_filter"
+  
+                  />
+                  <label class="form-check-label" for="large_input">
+                    large
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+    <section id="product1" class="section-p1">
+      <div id="alert" style="text-align:center;display:none;color: #3c763d;background-color: #dff0d8; border-color: #d6e9c6;padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; position: relative ; width: 100%; margin: 0 auto; margin-bottom: 20px; padding: 15px; border: 1px solid transparent; border-radius: 4px; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #dff0d8; border-color: #d6e9c6; color: #3c763d; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #dff0d8; border-color: #d6e9c6; color: #3c763d; padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; position: relative ; width: 100%; margin: 0 auto; margin-bottom: 20px; padding: 15px; border: 1px solid transparent; border-radius: 4px; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #dff0d8; border-color: #d6e9c6; color: #3c763d; position: fixed; top:15%; left: 50%; transform: translate(-50%, -50%); z-index: 50;" class="alert alert-success alert-dismissible fade show " role="alert">
+        <a id="trigger" href="#" style=" text-decoration: none; float: right; font-size: 21px; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20); opacity: .2;" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> Item added to cart.
+      </div>
+      <div id ="alert2" style="text-align:center;display:none;color: #8a6d3b;background-color: #fcf8e3; border-color: #faebcc;padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; position: relative ; width: 100%; margin: 0 auto; margin-bottom: 20px; padding: 15px; border: 1px solid transparent; border-radius: 4px; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #fcf8e3; border-color: #faebcc; color: #8a6d3b; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #fcf8e3; border-color: #faebcc; color: #8a6d3b; padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; position: relative ; width: 100%; margin: 0 auto; margin-bottom: 20px; padding: 15px; border: 1px solid transparent; border-radius: 4px; text-align: center; font-size: 16px; line-height: 1.5; display: none; background-color: #fcf8e3; border-color: #faebcc; color: #8a6d3b; position: fixed; top:15%; left: 50%; transform: translate(-50%, -50%); z-index: 50;" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <a id="trigger" href="#" style=" text-decoration: none; float: right; font-size: 21px; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20); opacity: .2;" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Warning!</strong> Item already in cart.
+      </div>
+        <div class="pro-container">
+        <div class="pro  d-0" >
+            <img src="images/WhatsApp Image 2023-04-28 at 9.24.33 PM.jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$77</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.24.33 PM.jpeg','Lorem, ipsum dolor.',77)"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro  d-0">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.24.34 PM (1).jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$80</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.24.34 PM (1).jpeg','Lorem, ipsum dolor.',80)"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro  d-0">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.24.34 PM (2).jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$75</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.24.34 PM (2).jpeg','Lorem, ipsum dolor.',75)"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro  d-0">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.24.34 PM.jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$82</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.24.34 PM.jpeg','Lorem, ipsum dolor.',82)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro  d-0">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.24.35 PM.jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$80</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.24.35 PM.jpeg','Lorem, ipsum dolor.',80)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro  d-0">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.24.36 PM.jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$77</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.24.36 PM.jpeg','Lorem, ipsum dolor.',77)"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro  d-0">
+        <a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        <a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        <img src="images/download (4).png" alt="">
+            <div class="des ">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$88</h4>
+            </div>
+            <a onclick="addToCart('images/download (4).png','Lorem, ipsum dolor.',88)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro  d-0">
+            <img src="https://www.almaal.org/wp-content/uploads/2020/09/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%B9%D9%85%D9%84-%D8%A5%D9%83%D8%B3%D8%B3%D9%88%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A8%D8%A7%D9%84%D8%AE%D8%B1%D8%B2-%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D8%B3%D8%AA%D8%A7%D9%84-1.jpg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$77</h4>
+            </div>
+            <a onclick="addToCart('https://www.almaal.org/wp-content/uploads/2020/09/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%B9%D9%85%D9%84-%D8%A5%D9%83%D8%B3%D8%B3%D9%88%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A8%D8%A7%D9%84%D8%AE%D8%B1%D8%B2-%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D8%B3%D8%AA%D8%A7%D9%84-1.jpg','Lorem, ipsum dolor.',77)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+
+        
+        <div class="pro  d-0">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.28.04 PM.jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$77</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.28.04 PM.jpeg','Lorem, ipsum dolor.',77)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro  d-0">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.28.27 PM.jpeg " alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$80</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.28.27 PM.jpeg','Lorem, ipsum dolor.',80)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro d-0">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.30.01 PM.jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$75</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.30.01 PM.jpeg','Lorem, ipsum dolor.',75)"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro d-0">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.30.00 PM.jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$82</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.30.00 PM.jpeg','Lorem, ipsum dolor.',82)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro d-1">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.34.12 PM.jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$80</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.34.12 PM.jpeg','Lorem, ipsum dolor.',80)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro d-1">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.32.34 PM.jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$77</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.32.34 PM.jpeg','Lorem, ipsum dolor.',77)"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro d-1">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.36.08 PM.jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+            <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$80</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.36.08 PM.jpeg','Lorem, ipsum dolor.',80)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro d-1">
+            <img src="images/WhatsApp Image 2023-04-28 at 9.31.32 PM.jpeg" alt="">
+            <div class="des">
+              <span>Lorem.</span>
+              <h5>Lorem, ipsum dolor.</h5>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h4>$77</h4>
+            </div>
+            <a onclick="addToCart('images/WhatsApp Image 2023-04-28 at 9.31.32 PM.jpeg','Lorem, ipsum dolor.',77)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+        <div class="pro d-1">
+          <img src="images/f2.jpg" alt="">
+          <div class="des">
+            <span>Lorem.</span>
+            <h5>Lorem, ipsum dolor.</h5>
+          <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+          </div>
+          <h4>$77</h4>
+          </div>
+          <a onclick="addToCart('images/f2.jpg','Lorem, ipsum dolor.',77)"><i class="fa-solid fa-cart-arrow-down"></i></a>
+      </div>
+      <div class="pro d-1">
+        <img src="images/f3.jpg" alt="">
+        <div class="des">
+          <span>Lorem.</span>
+          <h5>Lorem, ipsum dolor.</h5>
+        <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <h4>$44</h4>
+        </div>
+        <a onclick="addToCart('images/f3.jpg','Lorem, ipsum dolor.',44)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+    </div>
+    <div class="pro d-1">
+      <img src="images/f4.jpg" alt="">
+      <div class="des">
+        <span>Lorem.</span>
+        <h5>Lorem, ipsum dolor.</h5>
+      <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+      </div>
+      <h4>$68</h4>
+      </div>
+      <a onclick="addToCart('images/f4.jpg','Lorem, ipsum dolor.',68)"><i class="fa-solid fa-cart-arrow-down"></i></a>
+  </div>
+  <div class="pro d-1">
+    <img src="images/f5.jpg" alt="">
+    <div class="des">
+      <span>Lorem.</span>
+      <h5>Lorem, ipsum dolor.</h5>
+    <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <h4>$101</h4>
+    </div>
+    <a onclick="addToCart('images/f5.jpg','Lorem, ipsum dolor.',101)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+   </div>
+   <div class="pro d-1">
+    <img src="images/f6.jpg" alt="">
+    <div class="des">
+      <span>Lorem.</span>
+      <h5>Lorem, ipsum dolor.</h5>
+    <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <h4>$150</h4>
+    </div>
+    <a onclick="addToCart('images/f6.jpg','Lorem, ipsum dolor.',150)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+    </div>
+    <div class="pro d-1">
+      <img src="images/f7.jpg" alt="">
+      <div class="des">
+        <span>Lorem.</span>
+        <h5>Lorem, ipsum dolor.</h5>
+      <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+      </div>
+      <h4>$56</h4>
+      </div>
+      <a onclick="addToCart('images/f7.jpg','Lorem, ipsum dolor.',56)"><i class="fa-solid fa-cart-arrow-down"></i></a>
+  </div>
+  <div class="pro d-1">
+    <img src="images/f8.jpg" alt="">
+    <div class="des">
+      <span>Lorem.</span>
+      <h5>Lorem, ipsum dolor.</h5>
+    <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <h4>$89</h4>
+    </div>
+    <a onclick="addToCart('images/f8.jpg','Lorem, ipsum dolor.',89)"><i class="fa-solid fa-cart-arrow-down"></i></a>
+  </div>
+  <div class="pro d-1">
+  <img src="images/n1.jpg" alt="">
+  <div class="des">
+    <span>Lorem.</span>
+    <h5>Lorem, ipsum dolor.</h5>
+  <div class="star">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+  </div>
+  <h4>$56</h4>
+  </div>
+  <a onclick="addToCart('images/n1.jpg','Lorem, ipsum dolor.',56)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+  </div>
+  <div class="pro d-2">
+    <img src="images/n2.jpg" alt="">
+    <div class="des">
+      <span>Lorem.</span>
+      <h5>Lorem, ipsum dolor.</h5>
+    <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <h4>$55</h4>
+    </div>
+    <a onclick="addToCart('images/n2.jpg','Lorem, ipsum dolor.',55)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+</div>
+<div class="pro d-2">
+  <img src="images/n3.jpg" alt="">
+  <div class="des">
+    <span>Lorem.</span>
+    <h5>Lorem, ipsum dolor.</h5>
+  <div class="star">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+  </div>
+  <h4>$22</h4>
+  </div>
+  <a onclick="addToCart('images/n3.jpg','Lorem, ipsum dolor.',22)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+</div>
+<div class="pro d-2">
+  <img src="images/n4.jpg" alt="">
+  <div class="des">
+    <span>Lorem.</span>
+    <h5>Lorem, ipsum dolor.</h5>
+  <div class="star">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+  </div>
+  <h4>$11</h4>
+  </div>
+  <a onclick="addToCart('images/n4.jpg','Lorem, ipsum dolor.',11)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+</div>
+<div class="pro d-2">
+  <img src="images/n5.jpg" alt="">
+  <div class="des">
+    <span>Lorem.</span>
+    <h5>Lorem, ipsum dolor.</h5>
+  <div class="star">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+  </div>
+  <h4>$66</h4>
+  </div>
+  <a onclick="addToCart('images/n5.jpg','Lorem, ipsum dolor.',66)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+</div>
+<div class="pro d-2">
+  <img src="images/n6.jpg" alt="">
+  <div class="des">
+    <span>Lorem.</span>
+    <h5>Lorem, ipsum dolor.</h5>
+  <div class="star">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+  </div>
+  <h4>$75</h4>
+  </div>
+  <a onclick="addToCart('images/n6.jpg','Lorem, ipsum dolor.',75)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+</div>
+<div class="pro d-2">
+  <img src="images/n7.jpg" alt="">
+  <div class="des">
+    <span>Lorem.</span>
+    <h5>Lorem, ipsum dolor.</h5>
+  <div class="star">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+  </div>
+  <h4>$99</h4>
+  </div>
+  <a onclick="addToCart('images/n7.jpg','Lorem, ipsum dolor.',99)"><i class="fa-solid fa-cart-arrow-down"></i></a>
+</div>
+<div class="pro d-2">
+  <img src="images/b7 (1).jpg" alt="">
+  <div class="des">
+    <span>Lorem.</span>
+    <h5>Lorem, ipsum dolor.</h5>
+  <div class="star">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+  </div>
+  <h4>$88</h4>
+  </div>
+  <a onclick="addToCart('images/b7 (1).jpg','Lorem, ipsum dolor.',88)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+</div>
+
+<div class="pro d-2">
+  <img src="images/f1.jpg" alt="">
+  <div class="des">
+    <span>Lorem.</span>
+    <h5>Lorem, ipsum dolor.</h5>
+  <div class="star">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+  </div>
+  <h4>$100</h4>
+  </div>
+  <a onclick="addToCart('images/f1.jpg','Lorem, ipsum dolor.',100)" ><i class="fa-solid fa-cart-arrow-down"></i></a>
+</div>
+  </div>
+    </section>
+    <section id="pagination" class="section-p1">
+        <a onclick="paginationShop(1)">1</a>
+        <a onclick="paginationShop(2)">2</a>
+        <a onclick="paginationShop(3)"><i class="fa-solid fa-right-long"></i></a>
+    </section>
+
+    <section id="newsletter" class="section-m1 section-p1">
+      <div class="newstext">
+      <h4 class="text-white">Sign Up For Newsletters</h4>
+      <p>Get E-mail Updates About Our Latest Shop And <span>Special Offers.</span></p>
+      </div>
+      <div class="form m-auto d-block">
+          <div id="alert" style="text-align:center;display:none;color: #3c763d;background-color: #dff0d8; border-color: #d6e9c6;padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px;">
+              <a id="trigger" href="#" style=" text-decoration: none; float: right; font-size: 21px; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20); opacity: .2;" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Successfully!</strong> Subscribed.
+      </div>
+      <div id ="alert2" style="text-align:center;display:none;color: #8a6d3b;background-color: #fcf8e3; border-color: #faebcc;padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px;">
+              <a id="trigger" href="#" style=" text-decoration: none; float: right; font-size: 21px; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20); opacity: .2;" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Sorry!</strong> Email is already exist.
+      </div>
+      <div id ="alert3" style="text-align:center;display:none;color: #8d2517;background-color: #9e786c; border-color: #faebcc;padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px;">
+              <a id="trigger" href="#" style=" text-decoration: none; float: right; font-size: 21px; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20); opacity: .2;" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Sorry!</strong> Email is not valid.
+      </div>
+      <div id ="alert4" style="text-align:center;display:none;color: #8d2517;background-color: #9b827a; border-color: #faebcc;padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px;">
+          <a id="trigger" href="#" style=" text-decoration: none; float: right; font-size: 21px; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20); opacity: .2;" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Sorry!</strong> Email is required.
+      </div>
+      <input type="email" placeholder="Your Email Address">
+      <button class="normal mt-3" onclick="newsletter()">Sign Up</button>
+      </div>
+  </section>
+    <footer class="section-p1">
+        <div class="container">
+        <div class="row justify-content-between Row">
+        <div class="col col-lg-3 col-md-6 col-12">
+          <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz4dAdkW4IS1oYB2HM5hB79IBSW2dveOp_yA&usqp=CAU" alt="">
+          <h4>Contact Us </h4>
+          <p><strong>Address:</strong> </p>Faisal Street,Giza Egypt</p>
+          <p><strong>Phone:</strong> (+20) 106-300-5573 / (02)-35-943-627</p>
+          <p><strong>Hours:</strong> 10:00Am - 18:00 Pm, Sun - Thu</p>
+          <div class="follow">
+            <h4>Follow US</h4>
+            <div class="icon">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest-p"></i>
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 mt-5 m-md-0">
+          <h4>About</h4>
+          <a href="#">About US</a>
+          <a href="#">Delivery Information</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Contact US</a>
+        </div>
+        <div class="col col-lg-3 col-md-6 col-12 mt-5 m-lg-0">
+          <h4>My Account</h4>
+          <a href="#">Sign In</a>
+          <a href="#">View Cart</a>
+          <a href="#">My Wishlist</a>
+          <a href="#">Track My Order</a>
+          <a href="#">Help</a>
+        </div>
+      <div class="col install col-lg-3 col-md-6 col-12 mt-5 m-lg-0 ">
+        <h4>Install App</h4>
+        <p>From App Store Or Google Play</p>
+        <div class="row">
+          <img src="images/app.jpg" alt="" class="bg-white">
+          <img src="images/play.jpg" alt="" class="bg-white">
+        </div>
+        <p>Secured Payment Geteways</p>
+        <img src="images/pay.png" alt="" >
+      </div>
+    </div>
+    </div>
+      <div class="copyright mt-3">
+        <p> Copyright ©  @2023.All Rights Reserved.Designd By 
+          <a href="#">Fashionista</a>
+      </div>
+      </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
